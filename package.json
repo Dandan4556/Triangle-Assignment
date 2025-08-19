@@ -1,0 +1,16 @@
+{
+    "name": "triangle-app",
+    "version": "1.0.0",
+    "description": "Draw a triangle on canvas and calculate sides + angles",
+    "private": true,
+    "scripts": {
+      "build": "tsc -p ./tsconfig.json",
+      "watch": "tsc -w -p ./tsconfig.json",
+      "dev": "npm run build && npx serve -l 3000 ."
+    },
+    "devDependencies": {
+      "serve": "^14.2.4",
+      "typescript": "^5.9.2"
+    }
+  }
+  

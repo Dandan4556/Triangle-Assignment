@@ -1,0 +1,115 @@
+/* 
+  Base reset + typography
+  ------------------------
+  Keeping things clean and consistent across browsers.
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: system-ui, sans-serif;
+    background: #fafafa;
+    color: #222;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* 
+    Header section
+  */
+  .page-header {
+    margin-bottom: 24px;
+  }
+  .page-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+  }
+  .page-header .subtitle {
+    color: #555;
+    font-size: 0.95rem;
+  }
+  
+  /* 
+    Layout grid: canvas + side panel
+  */
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 20px;
+    align-items: start;
+  }
+  
+  /* 
+    Canvas area
+  */
+  .board {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+  }
+  canvas {
+    width: 800px;
+    height: 800px;
+    display: block;
+    cursor: crosshair;
+  }
+  
+  /* 
+    Side panel styling
+  */
+  .side-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 16px;
+    background: #fff;
+  }
+  .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+  .output {
+    min-height: 100px;
+    white-space: pre-line;
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+  .actions {
+    margin-top: 12px;
+  }
+  .btn {
+    padding: 8px 14px;
+    background: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn:hover {
+    background: #eee;
+  }
+  
+  /* 
+    Muted card for tips/info
+  */
+  .card.muted {
+    font-size: 0.85rem;
+    color: #444;
+    background: #f9f9f9;
+  }
+  .card.muted ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 8px;
+  }
+  

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>משולש — ציור וחישוב זוויות</title>
+  <!--
+    Professional note:
+    Keep HTML lean and semantic. We only mount the canvas and a clean side panel
+    for results. All behavior lives in main.ts (compiled to /dist/main.js).
+  -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <noscript>נדרש JavaScript כדי להפעיל את האפליקציה.</noscript>
+
+  <header class="page-header" aria-label="כותרת">
+    <h1>משולש: ציור, מדידות וזוויות</h1>
+    <p class="subtitle">לחצו שלוש פעמים בקנבס כדי להציב קודקודים. לחיצה על “איפוס” תאפס הכל.</p>
+  </header>
+
+  <main id="app" class="layout" aria-label="אזור עבודה ראשי">
+    <!--
+      Canvas area:
+      We keep it as a simple canvas element. Sizing is controlled by CSS, while
+      the device-pixel-ratio scaling will be handled in code for crisp rendering.
+    -->
+    <section class="board" aria-label="לוח ציור">
+      <canvas id="cv" width="800" height="800" aria-label="קנבס לציור משולש"></canvas>
+    </section>
+
+    <!--
+      Side panel:
+      Houses results, errors and quick actions. Separating the panel from the
+      canvas keeps responsibilities clear and improves readability.
+    -->
+    <aside class="side-panel" aria-label="פאנל תוצאות">
+      <div class="card">
+        <h2 class="card-title">תוצאות</h2>
+        <div id="out" class="output" role="status" aria-live="polite">
+          הכניסו 3 נקודות כדי להציג חישובים…
+        </div>
+        <div class="actions">
+          <button id="resetBtn" type="button" class="btn" aria-label="איפוס">איפוס</button>
+        </div>
+      </div>
+
+      <!-- Optional help block for quick tips -->
+      <div class="card muted">
+        <h3 class="card-subtitle">טיפים</h3>
+        <ul>
+          <li>לחיצה בקנבס מוסיפה נקודה — עד 3 נקודות.</li>
+          <li>אחרי 3 נקודות, המשולש יחושב ויוצג אוטומטית.</li>
+          <li>תמיד תוכלו ללחוץ “איפוס” כדי להתחיל מחדש.</li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <!--
+    JS entrypoint:
+    We'll write src/main.ts and compile to dist/main.js via TypeScript.
+    For now we reference the compiled output path expected by tsc.
+  -->
+  <script type="module" src="./dist/main.js" defer></script>
+</body>
+</html>
